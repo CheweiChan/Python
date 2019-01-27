@@ -16,6 +16,7 @@ QuitWord='q'
 print("create a file.txt ")
 writeBuff=list()
 filename=input("press file name=")
+print("press q to quit")
 for currenrLine in range(0,MaxLine):
     temp=input("line%d="%(currenrLine))
     if temp ==QuitWord:
