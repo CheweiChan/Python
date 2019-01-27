@@ -7,7 +7,7 @@ fileName=input("press file name=")
 f=open(fileName+'.txt','r')
 
 line=f.readlines()
-for i in range(3):
+for i in f.readlines():
     #print("%d:"%(i),line[i],end="") 
     if line[i].find(str) != -1:
         print("find the word in line%d,%d"%(i,line[i].find(str)))
