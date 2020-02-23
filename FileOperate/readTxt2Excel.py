@@ -1,6 +1,7 @@
 import os,time,xlrd
 import xlsxwriter as xl
 
+
 filename='test.xlsx'
 i=0;j=0;b=0
 f=open('ECLog.txt','r',encoding ='gbk')
