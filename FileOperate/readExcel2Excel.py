@@ -2,9 +2,9 @@ import xlrd
 import xlwt
 
 def set_style(name, height, bold ):
-	style = xlwt.XFStyle()   #初始化样式
+	style = xlwt.XFStyle()   #style init
 	
-	font = xlwt.Font()       #为样式创建字体
+	font = xlwt.Font()       #font init
 	font.name = name
 	font.bold = bold
 	font.color_index = 4
@@ -13,18 +13,18 @@ def set_style(name, height, bold ):
 	style.font = font
 	return style
 
-data = xlrd.open_workbook('321.xlsx') # 開啟xls檔案
-workbook = xlwt.Workbook() #注意Workbook的開頭W要大寫
+data = xlrd.open_workbook('321.xlsx') # open xlsx
+workbook = xlwt.Workbook() 
 sheet1 = workbook.add_sheet('test')
-table = data.sheets()[0] # 開啟第一張表
+table = data.sheets()[0] # open first sheet
 data_=table.cell_value(0,1)
-nrows = table.nrows # 獲取表的行數
+nrows = table.nrows # get row
 j=0;p=0
 skip=0
 print("row=%d\n"%(nrows))
 excelStyle=set_style('Times New Roman', 220, True)
 #f=open("temp.txt",'w')
-for i in range(nrows): # 迴圈逐行列印
+for i in range(nrows): # print 
     for q in range(table.ncols):
         print(table.cell_value(p,q),end='')
         sheet1.write(i,q,table.cell_value(p,q),excelStyle)
